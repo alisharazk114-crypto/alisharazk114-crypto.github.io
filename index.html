@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Sharazi Traveller </title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Anton&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;scroll-behavior:smooth}
 body{background:#0a0e1a;color:#fff;overflow-x:hidden}
-header{padding:14px 5%;border-bottom:1px solid rgba(30,41,59,.5);position:sticky;top:0;background:rgba(10,14,26,.9);backdrop-filter:blur(12px);z-index:1000;display:flex;justify-content:space-between;align-items:center}
+header{padding:14px 5%;position:sticky;top:0;background:rgba(10,14,26,.9);backdrop-filter:blur(12px);z-index:1000;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e293b}
 .logo{display:flex;gap:8px;align-items:center;font-weight:800;font-size:19px}
-.logo-circle{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#ff5a1f,#ff8c42);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
-.hero{background:linear-gradient(180deg,rgba(10,14,26,.1) 0%,rgba(10,14,26,.9) 100%),url('IMG_8133.jpeg') center/cover;min-height:92vh;display:flex;align-items:center;padding:50px 5%}
+.logo-circle{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#ff5a1f,#ff8c42);display:flex;align-items:center;justify-content:center;font-weight:800}
+.hero{background:linear-gradient(180deg,rgba(10,14,26,.1),rgba(10,14,26,.9)),url('IMG_8133.jpeg') center/cover;min-height:92vh;display:flex;align-items:center;padding:50px 5%}
 .hero h1{font-family:Anton,sans-serif;font-size:68px;line-height:.9}
 .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:420px;margin-top:24px}
 .stat-box{background:rgba(20,27,46,.8);border:1px solid #1e293b;padding:18px;border-radius:16px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .stat-box-book{background:rgba(20,27,46,.9);border:1.5px solid #ff5a1f;padding:18px;border-radius:16px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.btn-primary{padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:700;display:inline-block;font-size:13px;background:#ff5a1f;color:#fff;box-shadow:0 6px 20px rgba(255,90,31,.4)}
+.btn-primary{padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:700;display:inline-block;font-size:13px;background:#ff5a1f;color:#fff}
 .sec{padding:70px 5%}.light{background:#f8fafc;color:#1e293b}.dark{background:#0a0e1a;color:#fff}.gray{background:#f1f5f9;color:#0a0e1a}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;max-width:1180px;margin:auto}
-.card{background:#fff;border-radius:18px;overflow:hidden;color:#1e293b;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:.4s;border:1px solid #e2e8f0}
-.card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,.12)}
+.card{background:#fff;border-radius:18px;overflow:hidden;color:#1e293b;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid #e2e8f0;transition:.4s}
+.card:hover{transform:translateY(-6px)}
 .card img{width:100%;height:230px;object-fit:cover;display:block;background:#0a0e1a}
 .card-body{padding:14px 16px}
 .tour-card{background:rgba(20,27,46,.9);border:1px solid #1e293b;border-radius:18px;padding:22px;color:#fff;position:relative}
 .tour-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,#ff5a1f,#ff8c42)}
-.side-menu{position:fixed;top:0;right:-100%;width:320px;height:100%;background:linear-gradient(180deg,#0a0e1a,#141b2e);z-index:2000;transition:.4s;display:flex;flex-direction:column}
+.side-menu{position:fixed;top:0;right:-100%;width:320px;height:100%;background:#0a0e1a;z-index:2000;transition:.4s;display:flex;flex-direction:column}
 .side-menu.open{right:0}
 .menu-header{padding:20px 24px;border-bottom:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center}
 .menu-links{flex:1;padding:12px 0}
@@ -36,7 +35,6 @@ header{padding:14px 5%;border-bottom:1px solid rgba(30,41,59,.5);position:sticky
 .close-btn{font-size:28px;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#1e293b;color:#cbd5e1}
 .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1500;display:none}
 .overlay.show{display:block}
-footer{text-align:center;padding:28px 5%;color:#94a3b8;font-size:11px;border-top:1px solid #1e293b}
 .story-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px}
 .mission-card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,.06);border-left:4px solid #ff5a1f}
 .vision-card{background:#0a0e1a;border-radius:18px;padding:24px;color:#fff}
@@ -46,36 +44,24 @@ footer{text-align:center;padding:28px 5%;color:#94a3b8;font-size:11px;border-top
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 <div class="side-menu" id="sideMenu">
 <div class="menu-header"><div style="display:flex;gap:8px;align-items:center;font-weight:800"><div class="logo-circle">S</div><b style="color:#fff">Sharazi</b><span style="color:#ff5a1f">Traveller</span></div><div class="close-btn" onclick="toggleMenu()">×</div></div>
-<div class="menu-links">
-<a onclick="goTo('home')">🏠 Home</a>
-<a onclick="goTo('destination')">🏔️ Destination - </a>
-<a onclick="goTo('tours')">🎒 Tours Packages</a>
-<a onclick="goTo('about')">📖 Our Story</a>
-<a onclick="goTo('contact')">📞 Contact & Booking</a>
-</div>
-<div class="menu-footer"><b style="color:#fff;font-size:13px"></b><a href="https://wa.me/923498505852" class="contact-btn">WhatsApp: 0349-8505852</a></div>
+<div class="menu-links"><a onclick="goTo('home')">🏠 Home</a><a onclick="goTo('destination')">🏔️ Destination</a><a onclick="goTo('tours')">🎒 Tours Packages</a><a onclick="goTo('about')">📖 Our Story</a><a onclick="goTo('contact')">📞 Contact</a></div>
+<div class="menu-footer"><b style="color:#fff;font-size:13px">Born in Mountains | Danyore, GB</b><a href="https://wa.me/923498505852" class="contact-btn">WhatsApp: 0349-8505852</a></div>
 </div>
 <header><div class="logo"><div class="logo-circle">S</div><b>Sharazi</b><span style="color:#ff5a1f"> Traveller</span></div><button style="font-size:28px;background:none;border:none;color:#fff;cursor:pointer" onclick="toggleMenu()">☰</button></header>
 
-<section class="hero" id="home">
-<div>
-<h1><span style="color:#fff;display:block">SHARAZI</span><span style="color:#ff5a1f;display:block">TRAVELLER</span></h1>
-<a href="https://wa.me/923498505852" class="btn-primary" style="margin-top:22px">Join us Now →</a>
-<div class="stats-grid">
-<div class="stat-box"><b style="color:#ff5a1f;font-size:28px">15</b><span style="font-size:11px;color:#cbd5e1">VALLEYS REAL</span></div>
-<div class="stat-box"><b style="color:#ff5a1f;font-size:28px">500+</b><span style="font-size:11px;color:#cbd5e1">HAPPY GUESTS</span></div>
-<div class="stat-box"><b style="color:#ff5a1f;font-size:28px">5+</b><span style="font-size:11px;color:#cbd5e1">YEARS</span></div>
-<div class="stat-box-book"><b style="color:#ff5a1f;font-size:14px">BOOK NOW</b><a href="tel:+923498505852" style="color:#ff5a1f;text-decoration:none;font-size:11px;font-weight:700">0349-8505852</a></div>
-</div>
-</div>
-</section>
+<section class="hero" id="home"><div><h1><span style="color:#fff;display:block">SHARAZI</span><span style="color:#ff5a1f;display:block">TRAVELLER</span></h1><a href="https://wa.me/923498505852" class="btn-primary" style="margin-top:22px">Join us Now →</a><div class="stats-grid"><div class="stat-box"><b style="color:#ff5a1f;font-size:28px">15</b><span style="font-size:11px;color:#cbd5e1">VALLEYS REAL</span></div><div class="stat-box"><b style="color:#ff5a1f;font-size:28px">500+</b><span style="font-size:11px;color:#cbd5e1">HAPPY GUESTS</span></div><div class="stat-box"><b style="color:#ff5a1f;font-size:28px">5+</b><span style="font-size:11px;color:#cbd5e1">YEARS</span></div><div class="stat-box-book"><b style="color:#ff5a1f;font-size:14px">BOOK NOW</b><a href="tel:+923498505852" style="color:#ff5a1f;text-decoration:none;font-size:11px;font-weight:700">0349-8505852</a></div></div></div></section>
 
+<!-- DESTINATION - TEXT REMOVED AS PER YOUR CIRCLE -->
 <section class="sec light" id="destination">
-<div style="text-align:center;margin-bottom:32px"><p style="color:#ff5a1f;font-weight:700;font-size:12px;letter-spacing:2px">DESTINATION</p><h2 style="font-weight:800;font-size:32px;color:#0a0e1a;margin-top:8px"></h2><p style="color:#64748b;font-size:13px;margin-top:8px"></p></div>
+<div style="text-align:center;margin-bottom:28px">
+<p style="color:#ff5a1f;font-weight:700;font-size:12px;letter-spacing:2px">DESTINATION</p>
+<h2 style="font-weight:800;font-size:32px;color:#0a0e1a;margin-top:8px">15 Real Valleys</h2>
+<!-- Circle wala text hata diya -->
+</div>
 <div class="cards">
 <div class="card"><img src="IMG_8133.jpeg"><div class="card-body"><b>Rakaposhi / Nanga Parbat View Point</b><p style="font-size:11px;color:#64748b">Fairy Meadows</p></div></div>
-<div class="card"><img src="IMG_3956.jpeg"><div class="card-body"><b>1. Kutwal Valley</b><p style="font-size:11px;color:#64748b">Haramosh - My Home</p></div></div>
-<div class="card"><img src="IMG_6417.jpeg"><div class="card-body"><b>2. Khaltro Valley</b><p style="font-size:11px;color:#64748b">Haramosh</p></div></div>
+<div class="card"><img src="IMG_3956.jpeg"><div class="card-body"><b>1. Kutwal Valley</b></div></div>
+<div class="card"><img src="IMG_6417.jpeg"><div class="card-body"><b>2. Khaltro Valley</b></div></div>
 <div class="card"><img src="1c065a01-44dc-443b-876a-1e7575b85444.jpeg"><div class="card-body"><b>3. Bagarote Valley</b></div></div>
 <div class="card"><img src="1fd2341b-4958-48d6-b020-52321a9f675e.jpeg"><div class="card-body"><b>4. Hunza Valley</b></div></div>
 <div class="card"><img src="4f2c5298-d284-4c40-ac85-0702ecf2e84f.jpeg"><div class="card-body"><b>5. Nagar Valley</b></div></div>
@@ -91,40 +77,39 @@ footer{text-align:center;padding:28px 5%;color:#94a3b8;font-size:11px;border-top
 </div>
 </section>
 
-<section class="sec dark" id="tours">
-<div style="text-align:center;margin-bottom:32px"><p style="color:#ff5a1f;font-weight:700;font-size:12px;letter-spacing:2px">TOURS PACKAGES</p><h2 style="font-weight:800;font-size:32px;margin-top:8px">Choose Your Adventure</h2></div>
-<div class="cards">
-<div class="tour-card"><h3>3 Days - Hunza & Nagar</h3><p style="font-size:13px;color:#94a3b8;margin:10px 0">Altit Baltit | Attabad | Rakaposhi</p><b style="color:#ff5a1f">Rs. 55k /120k person</b></div>
-<div class="tour-card"><h3>5 Days - Skardu & Shigar</h3><p style="font-size:13px;color:#94a3b8;margin:10px 0">Cold Desert | Shigar Fort | Kharmang</p><b style="color:#ff5a1f">Rs. 60k /140k person</b></div>
-<div class="tour-card"><h3>4 Days - Astore & Fairy Meadows</h3><p style="font-size:13px;color:#94a3b8;margin:10px 0">Nanga Parbat View | Rama Lake</p><b style="color:#ff5a1f">Rs. 55k /110k person</b></div>
-<div class="tour-card"><h3>6 Days - Ghizer & Phander</h3><p style="font-size:13px;color:#94a3b8;margin:10px 0">Phander | Yasin | Ishkoman | Naltar</p><b style="color:#ff5a1f">Rs. 65k /120k person</b></div>
-</div>
-</section>
+<section class="sec dark" id="tours"><div style="text-align:center;margin-bottom:32px"><p style="color:#ff5a1f;font-weight:700;font-size:12px;letter-spacing:2px">TOURS PACKAGES</p><h2 style="font-weight:800;font-size:32px;margin-top:8px">Choose Your Adventure</h2></div><div class="cards"><div class="tour-card"><h3>3 Days - Hunza & Nagar</h3><p style="font-size:13px;color:#94a3b8;margin:10px 0">Altit Baltit | Attabad | Rakaposhi</p><b style="color:#ff5a1f">Rs. 25k / person</b></div><div class="tour-card"><h3>5 Days - Skardu & Shigar</h3><p style="font-size:13px;color:#94a3b8;margin:10px 0">Cold Desert | Shigar Fort | Kharmang</p><b style="color:#ff5a1f">Rs. 40k / person</b></div><div class="tour-card"><h3>4 Days - Astore & Fairy Meadows</h3><p style="font-size:13px;color:#94a3b8;margin:10px 0">Nanga Parbat View | Rama Lake</p><b style="color:#ff5a1f">Rs. 35k / person</b></div><div class="tour-card"><h3>6 Days - Ghizer & Phander</h3><p style="font-size:13px;color:#94a3b8;margin:10px 0">Phander | Yasin | Ishkoman | Naltar</p><b style="color:#ff5a1f">Rs. 45k / person</b></div></div></section>
 
-<section class="sec gray" id="about">
-<div style="max-width:1000px;margin:auto">
-<div style="text-align:center;margin-bottom:42px"><p style="color:#ff5a1f;font-weight:700;font-size:12px;letter-spacing:3px">OUR STORY</p><h2 style="font-weight:800;font-size:36px;line-height:1.1;margin-top:10px;color:#0a0e1a">Born in the Mountains,<br>Built for Adventure</h2><p style="color:#64748b;font-weight:600;margin-top:12px">Kutwal Valley and Haramosh Peak</p></div>
-<div class="story-grid">
-<div><h3 style="font-weight:800;font-size:21px;margin-bottom:14px;color:#0a0e1a">🏔️ Company Story</h3><p style="color:#334155;line-height:1.9;font-size:14px"><b>Sharazi Traveller was founded in Gilgit-Baltistan by Sharazi (Founder & Trip Manager).</b> Based in <b>Danyore, Gilgit</b>, we specialize in customized tours across northern Pakistan and focus on <b>sustainable tourism</b> — authentic experiences in the Karakoram, Hindukush, and Himalayas.<br><br>Today we lead <b>family tours, festival journeys, and treks across Fairy Meadows, Hunza, Skardu, Khaplu, Shimshal, Darel, and Kalash</b> — always with local expertise, sustainable practices, and an unwavering commitment to safety.<br><br>As a local from Danyore, I know every hidden trail of <b>15 Real Valleys</b> — all photos are 100% real, taken by me!</p></div>
-<div style="display:flex;flex-direction:column;gap:20px">
-<div class="mission-card"><h4 style="font-weight:800;font-size:16px">🎯 Our Mission</h4><p style="color:#475569;line-height:1.7;font-size:13px;margin-top:10px">To share the unparalleled beauty of Gilgit-Baltistan with travelers worldwide through safe, sustainable, and deeply authentic adventure experiences led by local experts.</p></div>
-<div class="vision-card"><h4 style="font-weight:800;font-size:16px;color:#ff5a1f">👁️ Our Vision</h4><p style="color:#cbd5e1;line-height:1.7;font-size:13px;margin-top:10px">To establish Pakistan's northern areas as a premier global adventure destination — where world-class expeditions meet warm Balti hospitality and leave positive impact on local communities.</p></div>
-<div style="background:#fff;border-radius:16px;padding:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.06)"><div><b style="color:#ff5a1f;font-size:22px">15</b><p style="font-size:11px">Real Valleys</p></div><div><b style="color:#ff5a1f;font-size:22px">500+</b><p style="font-size:11px">Happy Guests</p></div><div><b style="color:#ff5a1f;font-size:22px">Danyore</b><p style="font-size:11px">GB Base</p></div></div>
-</div>
-</div>
-<div style="text-align:center;margin-top:44px;padding-top:28px;border-top:1px solid #cbd5e1"><p style="font-style:italic;color:#475569">Mountains are not just to be seen, they are to be felt</p><p style="font-weight:800;color:#0a0e1a;margin-top:10px">- Sharazi, Founder & Trip Manager - Sharazi Traveller</p><p style="color:#64748b;font-size:11px;margin-top:6px">Based in Danyore, Gilgit-Baltistan | Local Expert Since 2019</p><div style="margin-top:22px"><a href="https://wa.me/923498505852" class="btn-primary">Join My Journey - Book Adventure →</a></div></div>
-</div>
-</section>
+<section class="sec gray" id="about"><div style="max-width:1000px;margin:auto"><div style="text-align:center;margin-bottom:42px"><p style="color:#ff5a1f;font-weight:700;font-size:12px;letter-spacing:3px">OUR STORY</p><h2 style="font-weight:800;font-size:36px;line-height:1.1;margin-top:10px;color:#0a0e1a">Born in the Mountains,<br>Built for Adventure</h2><p style="color:#64748b;font-weight:600;margin-top:12px">Kutwal Valley and Haramosh Peak</p></div><div class="story-grid"><div><h3 style="font-weight:800;font-size:21px;margin-bottom:14px;color:#0a0e1a">🏔️ Company Story</h3><p style="color:#334155;line-height:1.9;font-size:14px"><b>Sharazi Traveller was founded in Gilgit-Baltistan by Sharazi (Founder & Trip Manager).</b> Based in <b>Danyore, Gilgit</b>, we specialize in customized tours and focus on <b>sustainable tourism</b> — authentic experiences in Karakoram, Hindukush, and Himalayas.<br><br>Today we lead <b>family tours, festival journeys, and treks across Fairy Meadows, Hunza, Skardu, Khaplu, Shimshal, Darel, and Kalash</b> — always with local expertise, safety & sustainability.</p></div><div style="display:flex;flex-direction:column;gap:20px"><div class="mission-card"><h4 style="font-weight:800;font-size:16px">🎯 Our Mission</h4><p style="color:#475569;line-height:1.7;font-size:13px;margin-top:10px">To share the unparalleled beauty of Gilgit-Baltistan with travelers worldwide through safe, sustainable, and deeply authentic adventure experiences led by local experts.</p></div><div class="vision-card"><h4 style="font-weight:800;font-size:16px;color:#ff5a1f">👁️ Our Vision</h4><p style="color:#cbd5e1;line-height:1.7;font-size:13px;margin-top:10px">To establish Pakistan's northern areas as a premier global adventure destination — where world-class expeditions meet warm Balti hospitality and leave positive impact on local communities.</p></div></div></div><div style="text-align:center;margin-top:44px;padding-top:28px;border-top:1px solid #cbd5e1"><p style="font-style:italic;color:#475569">Mountains are not just to be seen, they are to be felt</p><p style="font-weight:800;color:#0a0e1a;margin-top:10px">- Sharazi, Founder & Trip Manager</p></div></div></section>
 
+<!-- CONTACT - EMAIL ADDED -->
 <section class="sec dark" id="contact">
-<div style="max-width:640px;margin:auto;text-align:center"><p style="color:#ff5a1f;font-weight:700;font-size:12px;letter-spacing:2px">CONTACT</p><h2 style="font-weight:800;font-size:32px;margin-top:10px">Contact & Booking</h2><div style="background:rgba(20,27,46,.9);border:1px solid #1e293b;border-radius:20px;padding:28px;margin-top:24px"><p style="margin:6px 0">📱 WhatsApp: <a href="https://wa.me/923498505852 E.mail:alisharazk114@gmail.com" style="color:#ff5a1f;text-decoration:none">0349-8505852</a></p><p style="margin:6px 0">📍 Base: Danyore, Gilgit-Baltistan</p><a href="https://wa.me/923498505852" style="background:linear-gradient(135deg,#ff5a1f,#ff8c42);color:#fff;padding:16px 32px;border-radius:30px;text-decoration:none;font-weight:700;display:inline-block;margin-top:22px">WhatsApp Now - Book Tour →</a></div></div>
+<div style="max-width:640px;margin:auto;text-align:center">
+<p style="color:#ff5a1f;font-weight:700;font-size:12px;letter-spacing:2px">CONTACT</p>
+<h2 style="font-weight:800;font-size:32px;margin-top:10px">Contact & Booking</h2>
+<p style="color:#94a3b8;margin:14px 0;font-size:13px">Ready for adventure? Contact us now!</p>
+<div style="background:rgba(20,27,46,.9);border:1px solid #1e293b;border-radius:20px;padding:28px;margin-top:24px">
+<div style="display:grid;gap:14px;text-align:left;max-width:360px;margin:auto">
+<p style="font-size:14px">📱 <b>WhatsApp:</b> <a href="https://wa.me/923498505852" style="color:#ff5a1f;text-decoration:none">0349-8505852</a></p>
+<p style="font-size:14px">📍 <b>Base:</b> Danyore, Gilgit-Baltistan</p>
+<p style="font-size:14px">✉️ <b>Email:</b> <a href="mailto:sharazitraveller@gmail.com" style="color:#ff5a1f;text-decoration:none">sharazitraveller@gmail.com</a></p>
+<p style="font-size:14px">⏰ <b>Available:</b> 24/7 Booking</p>
+</div>
+<div style="margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+<a href="https://wa.me/923498505852" style="background:linear-gradient(135deg,#ff5a1f,#ff8c42);color:#fff;padding:14px 26px;border-radius:30px;text-decoration:none;font-weight:700;font-size:13px">WhatsApp Now →</a>
+<a href="mailto:sharazitraveller@gmail.com" style="background:transparent;border:1.5px solid #ff5a1f;color:#ff5a1f;padding:14px 26px;border-radius:30px;text-decoration:none;font-weight:700;font-size:13px">Email Us →</a>
+</div>
+</div>
+</div>
 </section>
 
-<footer><b style="color:#fff">Sharazi Traveller.com | </b><br>alisharazk114@gmail | Danyore © 2026<br><span style="background:rgba(255,90,31,.15);color:#ff8c42;padding:4px 12px;border-radius:20px;margin-top:8px;display:inline-block">✅ 15 Real Valleys | Sharazi - Founder & Trip Manager</span></footer>
+<footer style="text-align:center;padding:30px 5%;background:#050814;border-top:1px solid #1e293b">
+<div style="max-width:800px;margin:auto">
+<p style="color:#fff;font-weight:700;font-size:14px">Sharazi Traveller</p>
+<p style="color:#64748b;font-size:12px;margin-top:8px">Kutwal Valley & Haramosh Peak | Danyore, GB | © 2026</p>
+<div style="margin-top:14px"><span style="background:rgba(255,90,31,.12);color:#ff8c42;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;border:1px solid rgba(255,90,31,.2)">✅ Sharazi - Founder & Trip Manager | 0349-8505852 | sharazitraveller@gmail.com</span></div>
+</div>
+</footer>
 
-<script>
-function toggleMenu(){var m=document.getElementById('sideMenu');var o=document.getElementById('overlay');m.classList.toggle('open');o.classList.toggle('show');}
-function goTo(id){toggleMenu();setTimeout(()=>{document.getElementById(id).scrollIntoView({behavior:'smooth'});},350);}
-</script>
+<script>function toggleMenu(){var m=document.getElementById('sideMenu');var o=document.getElementById('overlay');m.classList.toggle('open');o.classList.toggle('show');}function goTo(id){toggleMenu();setTimeout(()=>{document.getElementById(id).scrollIntoView({behavior:'smooth'});},350);}</script>
 </body>
 </html>
